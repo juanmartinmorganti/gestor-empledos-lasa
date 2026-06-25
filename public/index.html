@@ -2,13 +2,27 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Empleados LASA</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Gestión de empleados, permisos y vacaciones de LASA.">
+  <title>Gestor de Empleados | LASA</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
-
-  <h1>Gestor Empleados LASA</h1>
-
+<body data-page="inicio">
+  <header class="topbar">
+    <div><p class="eyebrow">LASA · Recursos Humanos</p><h1>Gestor de empleados</h1></div>
+    <div class="topbar-actions"><button id="theme-toggle" class="theme-toggle" type="button"><span aria-hidden="true">◐</span><span class="theme-label">Modo oscuro</span></button><p id="status" class="status" aria-live="polite">Listo</p></div>
+  </header>
+  <nav class="main-nav" aria-label="Navegación principal">
+    <a class="active" href="index.html">Inicio</a><a href="empleados.html">Empleados</a><a href="permisos.html">Permisos</a><a href="vacaciones.html">Vacaciones</a>
+  </nav>
+  <main>
+    <section class="welcome"><p class="eyebrow">Resumen general</p><h2>Todo el equipo, en un solo lugar.</h2><p>Administrá los datos de personal y sus ausencias desde los apartados correspondientes.</p></section>
+    <section class="summary linked-summary" aria-label="Resumen">
+      <a href="empleados.html"><span id="employee-count">0</span><small>Empleados activos</small><b>Gestionar empleados →</b></a>
+      <a href="permisos.html"><span id="permission-count">0</span><small>Permisos registrados</small><b>Ver permisos →</b></a>
+      <a href="vacaciones.html"><span id="vacation-count">0</span><small>Vacaciones registradas</small><b>Ver vacaciones →</b></a>
+    </section>
+  </main>
   <script src="script.js"></script>
 </body>
 </html>

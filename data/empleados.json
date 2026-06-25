@@ -1,1 +1,56 @@
-[]
+[
+  {
+    "id": "50d7782b-9c4f-4842-a3de-89e29b4994af",
+    "nombre": "HECTOR ANTONIO",
+    "apellido": "KEEM",
+    "dni": "17419041",
+    "puesto": "COND. MAQ. BOLSERA",
+    "email": "info@lasapapelera.com",
+    "fechaIngreso": "1989-05-01",
+    "creadoEn": "2026-06-24T21:35:56.341Z",
+    "actualizadoEn": "2026-06-25T00:04:16.249Z",
+    "cuil": "20174190411",
+    "sexo": "masculino",
+    "legajo": "1"
+  },
+  {
+    "id": "d511f7a5-c219-40e2-ad3f-22b0a47d1287",
+    "nombre": "MARTIN SEBASTIAN",
+    "apellido": "CRUZADO",
+    "dni": "21463576",
+    "cuil": "20214635764",
+    "puesto": "ADMINISTRATIVO",
+    "email": "info@lasapapelera.com",
+    "fechaIngreso": "1994-10-01",
+    "creadoEn": "2026-06-24T22:38:39.109Z",
+    "sexo": "masculino",
+    "actualizadoEn": "2026-06-25T00:03:52.203Z",
+    "legajo": "5"
+  },
+  {
+    "id": "6661f2d4-eaa5-4ab6-8d81-72c6eefe87be",
+    "legajo": "6",
+    "nombre": "JOSE LUIS",
+    "apellido": "FERNANDEZ",
+    "dni": "16179504",
+    "sexo": "masculino",
+    "cuil": "20161795047",
+    "puesto": "CHOFER",
+    "email": "info@lasapapelera.com",
+    "fechaIngreso": "1985-03-01",
+    "creadoEn": "2026-06-25T00:07:04.917Z"
+  },
+  {
+    "id": "9e0ea46b-013b-4542-b087-5737f80b84d8",
+    "legajo": "76",
+    "nombre": "GASTON HERNAN",
+    "apellido": "PONCE",
+    "dni": "25748481",
+    "sexo": "masculino",
+    "cuil": "20257484816",
+    "puesto": "IMPRESORA",
+    "email": "info@lasapapelera.com",
+    "fechaIngreso": "2024-05-01",
+    "creadoEn": "2026-06-25T00:11:47.489Z"
+  }
+]

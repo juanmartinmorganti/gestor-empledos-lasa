@@ -1,13 +1,15 @@
 {
   "name": "gestor-empleados-lasa",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Gestor básico de empleados, permisos y vacaciones.",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node --watch server.js",
+    "dev": "node --watch server.js",
+    "preview": "node --watch server.js",
+    "test": "node --test"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["empleados", "rrhh"],
   "license": "ISC",
   "dependencies": {
     "express": "^5.2.1"
