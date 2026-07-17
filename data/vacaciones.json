@@ -1,53 +1,222 @@
 [
   {
-    "id": "4e5f288d-7345-4cd2-bd3b-4e20a93d13f8",
+    "id": "d4b363ba-3560-43f7-a425-716fa476d0a9",
     "empleadoId": "50d7782b-9c4f-4842-a3de-89e29b4994af",
+    "periodo": 2026,
+    "fechaDesde": "2026-05-11",
+    "fechaHasta": "2026-05-17",
+    "observaciones": "",
+    "diasTomados": 7,
+    "creadoEn": "2026-07-17T14:39:10.574Z"
+  },
+  {
+    "id": "6be0d575-1adb-4137-b54f-735d22d397b9",
+    "empleadoId": "d511f7a5-c219-40e2-ad3f-22b0a47d1287",
+    "periodo": 2026,
+    "fechaDesde": "2026-03-17",
+    "fechaHasta": "2026-03-23",
+    "observaciones": "",
+    "diasTomados": 7,
+    "creadoEn": "2026-07-17T14:39:42.365Z"
+  },
+  {
+    "id": "a5417836-9205-4c52-a022-814c9c34ff00",
+    "empleadoId": "d511f7a5-c219-40e2-ad3f-22b0a47d1287",
+    "periodo": 2026,
+    "fechaDesde": "2026-06-22",
+    "fechaHasta": "2026-06-28",
+    "observaciones": "",
+    "diasTomados": 7,
+    "creadoEn": "2026-07-17T14:40:06.411Z"
+  },
+  {
+    "id": "bb88bc8c-c6af-4862-8f0b-1f79851692db",
+    "empleadoId": "6661f2d4-eaa5-4ab6-8d81-72c6eefe87be",
+    "periodo": 2026,
+    "fechaDesde": "2026-04-20",
+    "fechaHasta": "2026-04-26",
+    "observaciones": "",
+    "diasTomados": 7,
+    "creadoEn": "2026-07-17T14:40:37.851Z"
+  },
+  {
+    "id": "65631875-6fac-4c20-967e-a983d3eecb6d",
+    "empleadoId": "6661f2d4-eaa5-4ab6-8d81-72c6eefe87be",
+    "periodo": 2026,
+    "fechaDesde": "2026-06-02",
+    "fechaHasta": "2026-06-08",
+    "observaciones": "",
+    "diasTomados": 7,
+    "creadoEn": "2026-07-17T14:41:01.808Z"
+  },
+  {
+    "id": "41d69b6a-d393-4279-928d-33748b079bf4",
+    "empleadoId": "e85e45db-9203-4e28-bd00-29e857f3258e",
+    "periodo": 2026,
+    "fechaDesde": "2026-06-24",
+    "fechaHasta": "2026-06-30",
+    "observaciones": "",
+    "diasTomados": 7,
+    "creadoEn": "2026-07-17T14:41:43.427Z"
+  },
+  {
+    "id": "19e7ac27-a984-4027-be41-128a73d1eade",
+    "empleadoId": "f1a20e06-80aa-4d3e-917f-6ac4ef71224e",
+    "periodo": 2026,
+    "fechaDesde": "2026-05-19",
+    "fechaHasta": "2026-05-25",
+    "observaciones": "",
+    "diasTomados": 7,
+    "creadoEn": "2026-07-17T14:43:11.943Z"
+  },
+  {
+    "id": "0b4833db-41d3-4c44-a74f-f2bb46281cd5",
+    "empleadoId": "5bb1cb2d-b198-4e62-b520-cc933bb8fe3f",
+    "periodo": 2026,
+    "fechaDesde": "2026-05-04",
+    "fechaHasta": "2026-05-10",
+    "observaciones": "",
+    "diasTomados": 7,
+    "creadoEn": "2026-07-17T14:43:51.637Z"
+  },
+  {
+    "id": "1ae2c0fa-9893-41d6-b3ea-5ba7936cbd9b",
+    "empleadoId": "75415c9f-82b9-42f4-9914-cbbaafdfeb22",
+    "periodo": 2026,
+    "fechaDesde": "2026-03-17",
+    "fechaHasta": "2026-03-23",
+    "observaciones": "",
+    "diasTomados": 7,
+    "creadoEn": "2026-07-17T14:45:35.131Z"
+  },
+  {
+    "id": "98e30197-2c68-49a8-bc6c-6ebaa1863636",
+    "empleadoId": "75415c9f-82b9-42f4-9914-cbbaafdfeb22",
+    "periodo": 2026,
+    "fechaDesde": "2026-04-23",
+    "fechaHasta": "2026-04-29",
+    "observaciones": "",
+    "diasTomados": 7,
+    "creadoEn": "2026-07-17T14:45:57.067Z"
+  },
+  {
+    "id": "fc069584-71ef-4cc7-831b-1ad2a8df6570",
+    "empleadoId": "15c7d09d-0a49-444a-8edb-3baa78ea870d",
+    "periodo": 2026,
+    "fechaDesde": "2026-04-16",
+    "fechaHasta": "2026-04-22",
+    "observaciones": "",
+    "diasTomados": 7,
+    "creadoEn": "2026-07-17T14:47:38.202Z"
+  },
+  {
+    "id": "c301a6d1-42f9-4bf4-8ff1-fec9e1690a1f",
+    "empleadoId": "12df9afd-d5ab-4162-ab4e-1eedb8493b50",
+    "periodo": 2026,
+    "fechaDesde": "2026-04-24",
+    "fechaHasta": "2026-04-30",
+    "observaciones": "",
+    "diasTomados": 7,
+    "creadoEn": "2026-07-17T14:48:10.138Z"
+  },
+  {
+    "id": "e13448ef-5ca3-4877-85f9-85f73c933fd0",
+    "empleadoId": "1fa82bbf-4cb9-453f-aeab-a898e7c297d1",
+    "periodo": 2026,
+    "fechaDesde": "2026-06-16",
+    "fechaHasta": "2026-06-29",
+    "observaciones": "",
+    "diasTomados": 14,
+    "creadoEn": "2026-07-17T14:48:53.350Z"
+  },
+  {
+    "id": "1f8eadff-48f6-4d20-9ec3-7585b6cf376d",
+    "empleadoId": "304bea05-71e9-4ed1-8609-ab208058b4e1",
+    "periodo": 2026,
+    "fechaDesde": "2026-05-11",
+    "fechaHasta": "2026-05-17",
+    "observaciones": "",
+    "diasTomados": 7,
+    "creadoEn": "2026-07-17T14:49:27.115Z"
+  },
+  {
+    "id": "e5ceef87-bdfc-49dc-93e3-9509aee91de1",
+    "empleadoId": "cbb2b549-db62-4af5-92a8-22f3c9230e7e",
+    "periodo": 2026,
+    "fechaDesde": "2026-05-04",
+    "fechaHasta": "2026-05-10",
+    "observaciones": "",
+    "diasTomados": 7,
+    "creadoEn": "2026-07-17T14:49:58.379Z"
+  },
+  {
+    "id": "5d30fb9f-1c12-4499-bd5d-20e11fe0eaf4",
+    "empleadoId": "b1fa86a2-c3a1-4fa8-b841-33addb56a068",
+    "periodo": 2026,
+    "fechaDesde": "2026-03-16",
+    "fechaHasta": "2026-03-22",
+    "observaciones": "",
+    "diasTomados": 7,
+    "creadoEn": "2026-07-17T14:51:02.573Z"
+  },
+  {
+    "id": "885bb4ec-1914-44b2-a30c-9d7b9e00103b",
+    "empleadoId": "b1fa86a2-c3a1-4fa8-b841-33addb56a068",
     "periodo": 2026,
     "fechaDesde": "2026-06-01",
     "fechaHasta": "2026-06-07",
     "observaciones": "",
     "diasTomados": 7,
-    "creadoEn": "2026-06-24T22:26:28.169Z"
+    "creadoEn": "2026-07-17T14:51:28.041Z"
   },
   {
-    "id": "01005e8d-cd8f-4faa-996f-7b06c3980ca0",
-    "empleadoId": "d511f7a5-c219-40e2-ad3f-22b0a47d1287",
+    "id": "b8bb25b3-1121-44de-8c4b-1984b34a584e",
+    "empleadoId": "fef96207-dcbc-4bd7-8bec-dfcc888cfddb",
     "periodo": 2026,
-    "fechaDesde": "2026-06-22",
-    "fechaHasta": "2026-06-28",
-    "observaciones": "JUNIO",
-    "diasTomados": 7,
-    "creadoEn": "2026-06-24T22:40:30.706Z",
-    "actualizadoEn": "2026-06-24T22:45:55.461Z"
-  },
-  {
-    "id": "1a4c0fa2-61f7-459c-8ffc-d2ad1e80bb7c",
-    "empleadoId": "6661f2d4-eaa5-4ab6-8d81-72c6eefe87be",
-    "periodo": 2026,
-    "fechaDesde": "2026-06-15",
-    "fechaHasta": "2026-06-21",
-    "observaciones": "JUNIO",
-    "diasTomados": 7,
-    "creadoEn": "2026-06-25T00:07:43.297Z"
-  },
-  {
-    "id": "a5df78c6-a470-4a93-87e8-56235b7bda14",
-    "empleadoId": "50d7782b-9c4f-4842-a3de-89e29b4994af",
-    "periodo": 2026,
-    "fechaDesde": "2026-04-13",
-    "fechaHasta": "2026-04-19",
+    "fechaDesde": "2026-04-08",
+    "fechaHasta": "2026-04-14",
     "observaciones": "",
     "diasTomados": 7,
-    "creadoEn": "2026-06-25T00:08:48.989Z"
+    "creadoEn": "2026-07-17T14:52:55.674Z"
   },
   {
-    "id": "c088c917-05e9-4742-9b60-2768a1a027ed",
-    "empleadoId": "9e0ea46b-013b-4542-b087-5737f80b84d8",
+    "id": "065147ca-0d3c-452f-90d8-23e30f2ebedf",
+    "empleadoId": "fef96207-dcbc-4bd7-8bec-dfcc888cfddb",
     "periodo": 2026,
-    "fechaDesde": "2026-06-22",
-    "fechaHasta": "2026-06-27",
+    "fechaDesde": "2026-06-08",
+    "fechaHasta": "2026-06-15",
     "observaciones": "",
-    "diasTomados": 6,
-    "creadoEn": "2026-06-25T00:12:10.048Z"
+    "diasTomados": 8,
+    "creadoEn": "2026-07-17T14:53:26.381Z"
+  },
+  {
+    "id": "c7629ea1-b0f2-41a3-8be2-a4e274d06a4c",
+    "empleadoId": "602ade2d-06d5-4d3a-857f-7685543f776a",
+    "periodo": 2026,
+    "fechaDesde": "2026-05-19",
+    "fechaHasta": "2026-05-25",
+    "observaciones": "",
+    "diasTomados": 7,
+    "creadoEn": "2026-07-17T14:54:09.793Z"
+  },
+  {
+    "id": "2cb32d14-6b43-450c-9955-42b4dc0b2a59",
+    "empleadoId": "c8eb7c71-9924-4d16-867b-9b05324fdf3b",
+    "periodo": 2026,
+    "fechaDesde": "2026-05-24",
+    "fechaHasta": "2026-05-30",
+    "observaciones": "",
+    "diasTomados": 7,
+    "creadoEn": "2026-07-17T14:55:36.853Z"
+  },
+  {
+    "id": "d3bbd4af-1f2f-4774-85d8-8b5e2984da0a",
+    "empleadoId": "db49bb9d-f443-4e7b-9429-032ea986a810",
+    "periodo": 2026,
+    "fechaDesde": "2026-05-19",
+    "fechaHasta": "2026-05-25",
+    "observaciones": "",
+    "diasTomados": 7,
+    "creadoEn": "2026-07-17T15:01:06.846Z"
   }
 ]

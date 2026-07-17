@@ -1,11 +1,11 @@
 [
   {
-    "id": "d1dfa6cb-95dd-4305-9b40-508431066769",
-    "empleadoId": "50d7782b-9c4f-4842-a3de-89e29b4994af",
-    "motivo": "medico",
-    "fechaDesde": "2026-06-24",
-    "fechaHasta": "2026-06-24",
-    "observaciones": "turno con dentista",
-    "creadoEn": "2026-06-24T22:29:42.181Z"
+    "id": "3aa998df-4387-4e4d-bb25-5835fed1227c",
+    "empleadoId": "982648fa-0893-441f-88e3-20afff6da64e",
+    "motivo": "Estudios medicos",
+    "fechaDesde": "2026-07-08",
+    "fechaHasta": "2026-07-08",
+    "observaciones": "Se retira el día 08/07  a las 11:00",
+    "creadoEn": "2026-07-01T13:36:40.582Z"
   }
 ]
