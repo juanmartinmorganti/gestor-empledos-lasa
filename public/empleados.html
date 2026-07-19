@@ -4,9 +4,37 @@
 <body data-page="empleados">
   <header class="topbar"><div><p class="eyebrow">LASA · Recursos Humanos</p><h1>Gestor de empleados</h1></div><div class="topbar-actions"><button id="theme-toggle" class="theme-toggle" type="button"><span aria-hidden="true">◐</span><span class="theme-label">Modo oscuro</span></button><p id="status" class="status" aria-live="polite">Listo</p></div></header>
   <nav class="main-nav" aria-label="Navegación principal"><a href="index.html">Inicio</a><a class="active" href="empleados.html">Empleados</a><a href="permisos.html">Permisos</a><a href="vacaciones.html">Vacaciones</a></nav>
-  <main><section class="page-heading"><div><p class="eyebrow">Equipo</p><h2>Empleados</h2><p>Alta, edición y consulta de la nómina de LASA.</p></div><button id="new-employee" class="button">+ Nuevo empleado</button></section>
-    <section class="panel"><div class="table-wrap"><table><thead><tr><th>Legajo</th><th>Empleado</th><th>DNI</th><th>CUIL</th><th>Puesto</th><th>Ingreso</th><th aria-label="Acciones"></th></tr></thead><tbody id="employees-list"></tbody></table></div><p id="employees-empty" class="empty">Todavía no hay empleados cargados.</p></section>
+  <main><section class="page-heading"><div><p class="eyebrow">Equipo</p><h2>Empleados</h2><p>Buscá una persona o seleccioná su nombre para consultar la ficha.</p></div><button id="new-employee" class="button">+ Nuevo empleado</button></section>
+    <section class="employee-filters" aria-label="Filtros de empleados">
+      <label class="employee-search">Buscar empleado<input id="employee-search" type="search" placeholder="Nombre, apellido, legajo o DNI" autocomplete="off"></label>
+      <label>Elegir empleado<select id="employee-filter"><option value="">Todos los empleados</option></select></label>
+      <button id="clear-employee-filters" class="button button-secondary filter-clear" type="button">Limpiar filtros</button>
+    </section>
+    <div class="employee-results-heading"><p id="employee-results-count" aria-live="polite"></p></div>
+    <section id="employees-list" class="employee-grid" aria-label="Listado de empleados"></section>
+    <section id="employees-empty" class="panel employee-empty" hidden><h2>No hay empleados cargados</h2><p>Creá el primer registro con el botón “+ Nuevo empleado”.</p></section>
+    <section id="employee-filter-empty" class="panel employee-empty" hidden><h2>Sin resultados</h2><p>Probá con otro nombre, apellido, legajo o DNI.</p></section>
   </main>
+  <dialog id="employee-detail-dialog" class="employee-detail-dialog">
+    <div class="employee-detail-content">
+      <div class="dialog-heading"><div><p class="eyebrow">Ficha del empleado</p><h2 id="employee-detail-name"></h2></div><button type="button" class="icon-button" data-close aria-label="Cerrar">×</button></div>
+      <div class="employee-detail-hero"><span id="employee-detail-initials" class="employee-avatar employee-avatar-large" aria-hidden="true"></span><div><span id="employee-detail-position" class="employee-position"></span><p id="employee-detail-file" class="employee-file"></p></div></div>
+      <dl class="employee-detail-grid">
+        <div><dt>Nombre</dt><dd id="employee-detail-first-name"></dd></div><div><dt>Apellido</dt><dd id="employee-detail-last-name"></dd></div>
+        <div><dt>Legajo</dt><dd id="employee-detail-legajo"></dd></div><div><dt>DNI</dt><dd id="employee-detail-dni"></dd></div>
+        <div><dt>CUIL</dt><dd id="employee-detail-cuil"></dd></div><div><dt>Sexo</dt><dd id="employee-detail-sex"></dd></div>
+        <div><dt>Puesto</dt><dd id="employee-detail-job"></dd></div><div><dt>Fecha de ingreso</dt><dd id="employee-detail-start-date"></dd></div>
+        <div class="full-width"><dt>Email</dt><dd id="employee-detail-email"></dd></div>
+      </dl>
+      <section class="employee-permissions-section">
+        <div class="section-heading"><div><p class="eyebrow">Registro acumulado</p><h2>Permisos</h2></div><label class="employee-permission-year">Año<input id="employee-permission-year" type="number" min="1900" max="9999"></label></div>
+        <div class="employee-permission-totals"><p><strong id="employee-permission-year-total">0</strong><span>del año</span></p><p><strong id="employee-permission-month-total">0</strong><span>del mes actual</span></p></div>
+        <div id="employee-permission-months" class="month-breakdown compact-month-breakdown"></div>
+        <div class="employee-permission-history"><h3>Últimos permisos</h3><div id="employee-permission-latest" class="mini-permission-list"></div><h3>Historial del año</h3><div id="employee-permission-history" class="mini-permission-list"></div><p id="employee-permission-empty" class="empty" hidden>No hay permisos registrados para este año.</p></div>
+      </section>
+      <div class="employee-detail-actions"><button id="employee-detail-delete" type="button" class="button button-danger">Eliminar</button><div><button type="button" class="button button-secondary" data-close>Cerrar</button><button id="employee-detail-edit" type="button" class="button">Editar</button></div></div>
+    </div>
+  </dialog>
   <dialog id="employee-dialog"><form id="employee-form" method="dialog"><div class="dialog-heading"><h2 id="employee-dialog-title">Nuevo empleado</h2><button type="button" class="icon-button" data-close aria-label="Cerrar">×</button></div><input type="hidden" id="employee-id"><div class="form-grid"><label>N° de legajo<input id="legajo" name="legajo" required inputmode="numeric" maxlength="20"></label><label>Nombre<input id="nombre" name="nombre" required maxlength="80"></label><label>Apellido<input id="apellido" name="apellido" required maxlength="80"></label><label>DNI<input id="dni" name="dni" required maxlength="30"></label><label>Sexo<select id="sexo" name="sexo" required><option value="">Seleccionar</option><option value="masculino">Masculino</option><option value="femenino">Femenino</option><option value="otro">Otro / asignado por ANSES</option></select></label><label>CUIL<input id="cuil" name="cuil" required inputmode="numeric" maxlength="13" placeholder="20-12345678-6" aria-describedby="cuil-help cuil-warning"><small id="cuil-help">Se genera con DNI + sexo, pero podés editarlo manualmente.</small><small id="cuil-warning" class="field-warning" hidden>El CUIL no pasa la validación del dígito verificador.</small></label><label>Puesto<input id="puesto" name="puesto" required maxlength="100"></label><label>Email<input id="email" name="email" type="email" maxlength="120"></label><label>Fecha de ingreso<input id="fechaIngreso" name="fechaIngreso" type="date"></label></div><p id="employee-form-error" class="form-error" role="alert" hidden></p><div class="dialog-actions"><button type="button" class="button button-secondary" data-close>Cancelar</button><button class="button">Guardar empleado</button></div></form></dialog>
   <script src="/shared/cuil.js"></script>
   <script src="script.js"></script>

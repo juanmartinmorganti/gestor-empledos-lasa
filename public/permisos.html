@@ -1,5 +1,101 @@
 <!DOCTYPE html>
-<html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Permisos | LASA</title><link rel="stylesheet" href="style.css"></head>
-<body data-page="permisos"><header class="topbar"><div><p class="eyebrow">LASA · Recursos Humanos</p><h1>Gestor de empleados</h1></div><div class="topbar-actions"><button id="theme-toggle" class="theme-toggle" type="button"><span aria-hidden="true">◐</span><span class="theme-label">Modo oscuro</span></button><p id="status" class="status" aria-live="polite">Listo</p></div></header><nav class="main-nav" aria-label="Navegación principal"><a href="index.html">Inicio</a><a href="empleados.html">Empleados</a><a class="active" href="permisos.html">Permisos</a><a href="vacaciones.html">Vacaciones</a></nav>
-<main><section class="page-heading"><div><p class="eyebrow">Ausencias</p><h2>Permisos</h2><p>Registrá y consultá permisos del personal.</p></div><button class="button" data-open="permission-dialog">+ Registrar permiso</button></section><section class="panel"><ul id="permisos-list" class="records"></ul><p id="permisos-empty" class="empty">No hay permisos registrados.</p></section></main>
-<dialog id="permission-dialog"><form id="permission-form" method="dialog"><div class="dialog-heading"><h2>Registrar permiso</h2><button type="button" class="icon-button" data-close aria-label="Cerrar">×</button></div><div class="form-grid"><label>Empleado<select name="empleadoId" required class="employee-select"></select></label><label>Motivo<input name="motivo" required maxlength="120" placeholder="Ej.: Trámite personal"></label><label>Desde<input name="fechaDesde" type="date" required></label><label>Hasta<input name="fechaHasta" type="date" required></label><label class="full-width">Observaciones<textarea name="observaciones" rows="3" maxlength="500"></textarea></label></div><div class="dialog-actions"><button type="button" class="button button-secondary" data-close>Cancelar</button><button class="button">Guardar permiso</button></div></form></dialog><script src="script.js"></script></body></html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Registro, historial y estadísticas de permisos del personal de LASA.">
+  <title>Permisos | LASA</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="permisos">
+  <header class="topbar"><div><p class="eyebrow">LASA · Recursos Humanos</p><h1>Gestor de empleados</h1></div><div class="topbar-actions"><button id="theme-toggle" class="theme-toggle" type="button"><span aria-hidden="true">◐</span><span class="theme-label">Modo oscuro</span></button><p id="status" class="status" aria-live="polite">Listo</p></div></header>
+  <nav class="main-nav" aria-label="Navegación principal"><a href="index.html">Inicio</a><a href="empleados.html">Empleados</a><a class="active" href="permisos.html">Permisos</a><a href="vacaciones.html">Vacaciones</a></nav>
+  <main>
+    <section class="page-heading"><div><p class="eyebrow">Ausencias</p><h2>Permisos</h2><p id="permission-page-subtitle">Permisos del mes actual</p></div><button class="button" data-open="permission-dialog">+ Nuevo permiso</button></section>
+
+    <div class="section-tabs" role="tablist" aria-label="Vistas de permisos">
+      <button class="section-tab active" type="button" role="tab" aria-selected="true" data-permission-tab="current">Mes actual</button>
+      <button class="section-tab" type="button" role="tab" aria-selected="false" data-permission-tab="history">Historial de permisos</button>
+      <button class="section-tab" type="button" role="tab" aria-selected="false" data-permission-tab="annual">Resumen anual</button>
+    </div>
+
+    <section id="permission-current-view" class="permission-view" data-permission-view="current">
+      <div class="period-heading"><div><p class="eyebrow">Período actual</p><h2 id="permission-current-period"></h2></div><label class="permission-quick-search">Buscar<input id="permission-current-search" type="search" placeholder="Empleado, legajo o motivo"></label></div>
+      <section class="summary permission-summary" aria-label="Resumen mensual">
+        <article><span id="permission-month-total">0</span><small>Permisos del mes</small></article>
+        <article><span id="permission-month-employees">0</span><small>Empleados con permisos</small></article>
+        <article><span id="permission-month-top">—</span><small>Mayor cantidad</small></article>
+      </section>
+      <section id="permissions-current-list" class="permission-grid" aria-label="Permisos del mes actual"></section>
+      <section id="permissions-current-empty" class="panel employee-empty" hidden><h2>Sin permisos este mes</h2><p>No hay registros que coincidan con la búsqueda.</p></section>
+    </section>
+
+    <section id="permission-history-view" class="permission-view" data-permission-view="history" hidden>
+      <section class="panel history-filter-panel">
+        <div class="section-heading"><div><p class="eyebrow">Consulta histórica</p><h2>Filtros</h2></div><button id="permission-history-clear" class="button button-secondary" type="button">Limpiar filtros</button></div>
+        <div class="history-filters">
+          <label>Empleado<select id="permission-history-employee" class="permission-employee-filter"><option value="">Todos los empleados</option></select></label>
+          <label>Legajo<input id="permission-history-file" inputmode="numeric" placeholder="Ej.: 15"></label>
+          <label>Mes<select id="permission-history-month"><option value="">Todos los meses</option><option value="01">Enero</option><option value="02">Febrero</option><option value="03">Marzo</option><option value="04">Abril</option><option value="05">Mayo</option><option value="06">Junio</option><option value="07">Julio</option><option value="08">Agosto</option><option value="09">Septiembre</option><option value="10">Octubre</option><option value="11">Noviembre</option><option value="12">Diciembre</option></select></label>
+          <label>Año<input id="permission-history-year" type="number" min="1900" max="9999" placeholder="Todos"></label>
+          <label>Desde<input id="permission-history-from" type="date"></label>
+          <label>Hasta<input id="permission-history-to" type="date"></label>
+          <label>Tipo<select id="permission-history-type"><option value="">Todos los tipos</option><option>Retiro</option><option>Ausencia</option><option>Llegada tarde</option><option>Trámite</option><option>Estudio médico</option><option>Otro</option><option>Sin especificar</option></select></label>
+          <label>Documento<select id="permission-history-attachment"><option value="">Con o sin documento</option><option value="con">Con documento</option><option value="sin">Sin documento</option></select></label>
+          <label class="history-text-filter">Motivo u observaciones<input id="permission-history-query" type="search" placeholder="Texto a buscar"></label>
+        </div>
+      </section>
+      <div class="employee-results-heading"><p id="permission-history-count" aria-live="polite"></p></div>
+      <section id="permissions-history-list" class="permission-grid" aria-label="Historial de permisos"></section>
+      <section id="permissions-history-empty" class="panel employee-empty" hidden><h2>Sin resultados</h2><p>No se encontraron permisos para los filtros seleccionados.</p></section>
+    </section>
+
+    <section id="permission-annual-view" class="permission-view" data-permission-view="annual" hidden>
+      <div class="period-heading"><div><p class="eyebrow">Estadísticas</p><h2>Resumen anual</h2></div><label class="annual-year-control">Año<input id="permission-annual-year" type="number" min="1900" max="9999"></label></div>
+      <section class="summary permission-summary" aria-label="Resumen anual">
+        <article><span id="permission-year-total">0</span><small>Permisos del año</small></article>
+        <article><span id="permission-year-employees">0</span><small>Empleados con permisos</small></article>
+        <article><span id="permission-year-top">—</span><small>Empleado con más permisos</small></article>
+      </section>
+      <section class="panel"><div class="section-heading"><div><p class="eyebrow">Evolución mensual</p><h2>Permisos por mes</h2></div></div><div id="permission-month-breakdown" class="month-breakdown"></div></section>
+      <section class="panel annual-table-panel"><div class="section-heading"><div><p class="eyebrow">Detalle del equipo</p><h2>Permisos por empleado</h2></div></div><div class="table-wrap"><table class="annual-permission-table"><thead><tr><th>Empleado</th><th>Legajo</th><th>Ene</th><th>Feb</th><th>Mar</th><th>Abr</th><th>May</th><th>Jun</th><th>Jul</th><th>Ago</th><th>Sep</th><th>Oct</th><th>Nov</th><th>Dic</th><th>Total</th></tr></thead><tbody id="permission-annual-list"></tbody></table></div><p id="permission-annual-empty" class="empty" hidden>No hay permisos registrados para este año.</p></section>
+    </section>
+  </main>
+
+  <dialog id="permission-dialog">
+    <form id="permission-form" method="dialog" enctype="multipart/form-data">
+      <div class="dialog-heading"><div><p class="eyebrow">Registro</p><h2 id="permission-dialog-title">Nuevo permiso</h2></div><button type="button" class="icon-button" data-close aria-label="Cerrar">×</button></div>
+      <input id="permission-id" type="hidden">
+      <div class="form-grid">
+        <label>Empleado<select name="empleadoId" required class="employee-select"></select></label>
+        <label>Tipo de permiso<select name="tipo" required><option value="">Seleccionar</option><option>Retiro</option><option>Ausencia</option><option>Llegada tarde</option><option>Trámite</option><option>Estudio médico</option><option>Otro</option><option>Sin especificar</option></select></label>
+        <label class="full-width">Motivo<input name="motivo" required maxlength="120" placeholder="Ej.: Trámite personal"></label>
+        <label>Desde<input name="fechaDesde" type="date" required></label><label>Hasta<input name="fechaHasta" type="date" required></label>
+        <label>Hora desde <small>Opcional</small><input name="horaDesde" type="time"></label><label>Hora hasta <small>Opcional</small><input name="horaHasta" type="time"></label>
+        <label>Estado<select name="estado"><option>Registrado</option><option>Pendiente</option><option>Aprobado</option><option>Rechazado</option></select></label>
+        <label class="full-width">Observaciones<textarea name="observaciones" rows="3" maxlength="500"></textarea></label>
+        <label class="full-width permission-file-field">Documento adjunto <small>Opcional · JPG, JPEG, PNG o PDF · máximo 10 MB</small><input id="permission-document" name="documento" type="file" accept="image/jpeg,image/png,application/pdf"><span id="permission-file-name" class="selected-file-name">Ningún archivo seleccionado</span></label>
+      </div>
+      <div id="permission-current-attachment" class="current-attachment" hidden></div>
+      <p id="permission-form-error" class="form-error" role="alert" hidden></p>
+      <div class="dialog-actions"><button type="button" class="button button-secondary" data-close>Cancelar</button><button class="button">Guardar permiso</button></div>
+    </form>
+  </dialog>
+
+  <dialog id="permission-detail-dialog" class="permission-detail-dialog">
+    <div class="permission-detail-content">
+      <div class="dialog-heading"><div><p class="eyebrow">Detalle del permiso</p><h2 id="permission-detail-name"></h2></div><button type="button" class="icon-button" data-close aria-label="Cerrar">×</button></div>
+      <div id="permission-detail-badges" class="permission-badges"></div>
+      <dl class="employee-detail-grid permission-detail-grid">
+        <div><dt>Empleado</dt><dd id="permission-detail-employee"></dd></div><div><dt>Legajo</dt><dd id="permission-detail-file"></dd></div>
+        <div><dt>Desde</dt><dd id="permission-detail-from"></dd></div><div><dt>Hasta</dt><dd id="permission-detail-to"></dd></div>
+        <div><dt>Horario</dt><dd id="permission-detail-time"></dd></div><div><dt>Estado</dt><dd id="permission-detail-status"></dd></div>
+        <div class="full-width"><dt>Motivo</dt><dd id="permission-detail-reason"></dd></div><div class="full-width"><dt>Observaciones</dt><dd id="permission-detail-notes"></dd></div>
+      </dl>
+      <div id="permission-detail-document" class="permission-document-box"></div>
+      <div class="employee-detail-actions"><button id="permission-detail-delete" type="button" class="button button-danger">Eliminar</button><div><button type="button" class="button button-secondary" data-close>Cerrar</button><button id="permission-detail-edit" type="button" class="button">Editar</button></div></div>
+    </div>
+  </dialog>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,7 +1,80 @@
 <!DOCTYPE html>
-<html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Vacaciones | LASA</title><link rel="stylesheet" href="style.css"></head>
-<body data-page="vacaciones"><header class="topbar"><div><p class="eyebrow">LASA · Recursos Humanos</p><h1>Gestor de empleados</h1></div><div class="topbar-actions"><button id="theme-toggle" class="theme-toggle" type="button"><span aria-hidden="true">◐</span><span class="theme-label">Modo oscuro</span></button><p id="status" class="status" aria-live="polite">Listo</p></div></header><nav class="main-nav" aria-label="Navegación principal"><a href="index.html">Inicio</a><a href="empleados.html">Empleados</a><a href="permisos.html">Permisos</a><a class="active" href="vacaciones.html">Vacaciones</a></nav>
-<main><section class="page-heading"><div><p class="eyebrow">Descanso</p><h2>Vacaciones</h2><p>Calculadas según la antigüedad al 31 de diciembre de cada período.</p></div><div class="page-actions"><label class="period-control">Período<input id="vacation-period" type="number" min="1900" max="9999" step="1"></label><button class="button" data-open="vacation-dialog">+ Registrar vacaciones</button></div></section>
-<section class="panel"><div class="section-heading"><div><p class="eyebrow">Saldo anual</p><h2>Vacaciones por empleado</h2></div></div><div class="table-wrap"><table><thead><tr><th>Empleado</th><th>Ingreso</th><th>Antigüedad al 31/12</th><th>Corresponden</th><th>Tomados</th><th>Saldo</th></tr></thead><tbody id="vacation-summary"></tbody></table></div><p id="vacation-summary-empty" class="empty">No hay empleados para mostrar.</p></section>
-<section class="panel vacation-records"><div class="section-heading"><div><p class="eyebrow">Tramos cargados</p><h2>Vacaciones tomadas</h2></div></div><ul id="vacaciones-list" class="records"></ul><p id="vacaciones-empty" class="empty">No hay vacaciones registradas para este período.</p></section></main>
-<dialog id="vacation-dialog"><form id="vacation-form" method="dialog"><div class="dialog-heading"><h2 id="vacation-dialog-title">Registrar vacaciones</h2><button type="button" class="icon-button" data-close aria-label="Cerrar">×</button></div><input id="vacation-id" type="hidden"><div class="form-grid"><label>Empleado<select name="empleadoId" required class="employee-select"></select></label><label>Período<input id="vacation-form-period" name="periodo" type="number" min="1900" max="9999" required></label><label>Desde<input name="fechaDesde" type="date" required></label><label>Hasta<input name="fechaHasta" type="date" required></label><label class="full-width">Observaciones<textarea name="observaciones" rows="3" maxlength="500"></textarea></label></div><p class="form-note">Los días tomados se calculan automáticamente como días corridos.</p><div class="dialog-actions"><button type="button" class="button button-secondary" data-close>Cancelar</button><button class="button">Guardar vacaciones</button></div></form></dialog><script src="script.js"></script></body></html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Saldos, historial y resumen anual de vacaciones del personal de LASA.">
+  <title>Vacaciones | LASA</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="vacaciones">
+  <header class="topbar"><div><p class="eyebrow">LASA · Recursos Humanos</p><h1>Gestor de empleados</h1></div><div class="topbar-actions"><button id="theme-toggle" class="theme-toggle" type="button"><span aria-hidden="true">◐</span><span class="theme-label">Modo oscuro</span></button><p id="status" class="status" aria-live="polite">Listo</p></div></header>
+  <nav class="main-nav" aria-label="Navegación principal"><a href="index.html">Inicio</a><a href="empleados.html">Empleados</a><a href="permisos.html">Permisos</a><a class="active" href="vacaciones.html">Vacaciones</a></nav>
+  <main>
+    <section class="page-heading"><div><p class="eyebrow">Descanso</p><h2>Vacaciones</h2><p id="vacation-page-subtitle">Saldos del período actual</p></div><button class="button" data-open="vacation-dialog">+ Registrar vacaciones</button></section>
+
+    <div class="section-tabs" role="tablist" aria-label="Vistas de vacaciones">
+      <button class="section-tab active" type="button" role="tab" aria-selected="true" data-vacation-tab="current">Vacaciones actuales</button>
+      <button class="section-tab" type="button" role="tab" aria-selected="false" data-vacation-tab="history">Historial de vacaciones</button>
+      <button class="section-tab" type="button" role="tab" aria-selected="false" data-vacation-tab="annual">Resumen anual</button>
+    </div>
+
+    <section class="vacation-view" data-vacation-view="current">
+      <div class="period-heading"><div><p class="eyebrow">Período seleccionado</p><h2 id="vacation-current-period"></h2></div><label class="annual-year-control">Año<input id="vacation-current-year" type="number" min="1900" max="9999"></label></div>
+      <section class="summary vacation-summary-four" aria-label="Resumen del período">
+        <article><span id="vacation-current-employees">0</span><small>Empleados</small></article>
+        <article><span id="vacation-current-assigned">0</span><small>Días correspondientes</small></article>
+        <article><span id="vacation-current-taken">0</span><small>Días tomados</small></article>
+        <article><span id="vacation-current-balance">0</span><small>Días pendientes</small></article>
+      </section>
+      <section class="panel vacation-filter-panel"><div class="vacation-current-filters">
+        <label class="vacation-search-filter">Buscar<input id="vacation-current-search" type="search" placeholder="Nombre, apellido, legajo o DNI"></label>
+        <label>Empleado<select id="vacation-current-employee" class="vacation-employee-filter"><option value="">Todos los empleados</option></select></label>
+        <label>Estado del saldo<select id="vacation-current-status"><option value="">Todos los estados</option><option value="pending">Con saldo pendiente</option><option value="used">Saldo completo utilizado</option><option value="none">Sin vacaciones registradas</option><option value="exceeded">Vacaciones excedidas</option></select></label>
+        <button id="vacation-current-clear" type="button" class="button button-secondary">Limpiar filtros</button>
+      </div></section>
+      <div class="employee-results-heading"><p id="vacation-current-count" aria-live="polite"></p></div>
+      <section id="vacation-employee-grid" class="vacation-employee-grid" aria-label="Saldos de vacaciones por empleado"></section>
+      <section id="vacation-current-empty" class="panel employee-empty" hidden><h2>Sin resultados</h2><p>No hay empleados que coincidan con los filtros seleccionados.</p></section>
+    </section>
+
+    <section id="vacation-history-view" class="vacation-view" data-vacation-view="history" hidden>
+      <section class="panel history-filter-panel"><div class="section-heading"><div><p class="eyebrow">Consulta histórica</p><h2>Filtros</h2></div><button id="vacation-history-clear" class="button button-secondary" type="button">Limpiar filtros</button></div>
+        <div class="history-filters vacation-history-filters">
+          <label>Empleado<select id="vacation-history-employee" class="vacation-employee-filter"><option value="">Todos los empleados</option></select></label>
+          <label>Legajo<input id="vacation-history-file" inputmode="numeric" placeholder="Ej.: 15"></label>
+          <label>Año<input id="vacation-history-year" type="number" min="1900" max="9999" placeholder="Todos"></label>
+          <label>Mes<select id="vacation-history-month"><option value="">Todos los meses</option><option value="01">Enero</option><option value="02">Febrero</option><option value="03">Marzo</option><option value="04">Abril</option><option value="05">Mayo</option><option value="06">Junio</option><option value="07">Julio</option><option value="08">Agosto</option><option value="09">Septiembre</option><option value="10">Octubre</option><option value="11">Noviembre</option><option value="12">Diciembre</option></select></label>
+          <label>Desde<input id="vacation-history-from" type="date"></label><label>Hasta<input id="vacation-history-to" type="date"></label>
+          <label>Estado<select id="vacation-history-status"><option value="">Todos los estados</option><option>Registrado</option><option>Pendiente</option><option>Aprobado</option><option>Finalizado</option><option>Cancelado</option></select></label>
+          <label class="history-text-filter">Observaciones<input id="vacation-history-query" type="search" placeholder="Texto a buscar"></label>
+        </div>
+      </section>
+      <div class="employee-results-heading"><p id="vacation-history-count" aria-live="polite"></p></div>
+      <section id="vacation-history-list" class="vacation-history-grid" aria-label="Historial de vacaciones"></section>
+      <section id="vacation-history-empty" class="panel employee-empty" hidden><h2>Sin resultados</h2><p>No se encontraron vacaciones para los filtros seleccionados.</p></section>
+    </section>
+
+    <section class="vacation-view" data-vacation-view="annual" hidden>
+      <div class="period-heading"><div><p class="eyebrow">Balance general</p><h2>Resumen anual</h2></div><label class="annual-year-control">Año<input id="vacation-annual-year" type="number" min="1900" max="9999"></label></div>
+      <section class="summary vacation-summary-five" aria-label="Totales anuales">
+        <article><span id="vacation-year-assigned">0</span><small>Días correspondientes</small></article><article><span id="vacation-year-taken">0</span><small>Días tomados</small></article><article><span id="vacation-year-balance">0</span><small>Días pendientes</small></article><article><span id="vacation-year-pending">0</span><small>Empleados con saldo</small></article><article><span id="vacation-year-used">0</span><small>Saldo utilizado</small></article>
+      </section>
+      <section class="panel annual-table-panel"><div class="section-heading"><div><p class="eyebrow">Detalle del equipo</p><h2>Saldos por empleado</h2></div></div><div class="table-wrap"><table class="vacation-annual-table"><thead><tr><th>Empleado</th><th>Legajo</th><th>Corresponden</th><th>Tomados</th><th>Saldo</th><th>Estado</th></tr></thead><tbody id="vacation-annual-list"></tbody></table></div><p id="vacation-annual-empty" class="empty" hidden>No hay empleados para mostrar.</p></section>
+    </section>
+  </main>
+
+  <dialog id="vacation-employee-dialog" class="vacation-employee-dialog">
+    <div class="vacation-employee-content"><div class="dialog-heading"><div><p class="eyebrow">Ficha de vacaciones</p><h2 id="vacation-employee-name"></h2><p id="vacation-employee-file" class="employee-file"></p></div><button type="button" class="icon-button" data-close aria-label="Cerrar">×</button></div>
+      <div class="vacation-detail-period"><label>Año<input id="vacation-employee-year" type="number" min="1900" max="9999"></label><button id="vacation-employee-register" type="button" class="button">+ Registrar vacaciones</button></div>
+      <div class="vacation-balance-cards"><article><span id="vacation-employee-assigned">0</span><small>Corresponden</small></article><article><span id="vacation-employee-taken">0</span><small>Tomados</small></article><article id="vacation-employee-balance-card"><span id="vacation-employee-balance">0</span><small>Saldo</small></article></div>
+      <div class="section-heading vacation-detail-heading"><div><p class="eyebrow">Tramos registrados</p><h2>Historial del empleado</h2></div></div>
+      <div id="vacation-employee-history" class="vacation-detail-history"></div><p id="vacation-employee-empty" class="empty" hidden>No hay vacaciones registradas para este año.</p>
+      <div class="dialog-actions"><button type="button" class="button button-secondary" data-close>Cerrar</button></div>
+    </div>
+  </dialog>
+
+  <dialog id="vacation-dialog"><form id="vacation-form" method="dialog"><div class="dialog-heading"><div><p class="eyebrow">Registro</p><h2 id="vacation-dialog-title">Registrar vacaciones</h2></div><button type="button" class="icon-button" data-close aria-label="Cerrar">×</button></div><input id="vacation-id" type="hidden"><div class="form-grid"><label>Empleado<select name="empleadoId" required class="employee-select"></select></label><label>Año correspondiente<input id="vacation-form-period" name="periodo" type="number" min="1900" max="9999" required></label><label>Desde<input name="fechaDesde" type="date" required></label><label>Hasta<input name="fechaHasta" type="date" required></label><label>Estado<select name="estado"><option>Registrado</option><option>Pendiente</option><option>Aprobado</option><option>Finalizado</option><option>Cancelado</option></select></label><label class="full-width">Observaciones<textarea name="observaciones" rows="3" maxlength="500"></textarea></label></div><p class="form-note">La cantidad se calcula automáticamente como días corridos, incluyendo la fecha inicial y final.</p><p id="vacation-form-error" class="form-error" role="alert" hidden></p><div class="dialog-actions"><button type="button" class="button button-secondary" data-close>Cancelar</button><button class="button">Guardar vacaciones</button></div></form></dialog>
+  <script src="script.js"></script>
+</body>
+</html>
