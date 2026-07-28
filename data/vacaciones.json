@@ -218,5 +218,49 @@
     "observaciones": "",
     "diasTomados": 7,
     "creadoEn": "2026-07-17T15:01:06.846Z"
+  },
+  {
+    "id": "2f0df091-e1b4-4bb5-8c65-227279b6c316",
+    "empleadoId": "81edaae2-5a7b-42a1-b4e0-949c2fb1bb05",
+    "periodo": 2026,
+    "fechaDesde": "2026-07-20",
+    "fechaHasta": "2026-07-26",
+    "estado": "Registrado",
+    "observaciones": "",
+    "diasTomados": 7,
+    "creadoEn": "2026-07-24T12:57:02.827Z"
+  },
+  {
+    "id": "b8a03cc4-f191-460c-8b52-cd457f887769",
+    "empleadoId": "5bb1cb2d-b198-4e62-b520-cc933bb8fe3f",
+    "periodo": 2026,
+    "fechaDesde": "2026-07-24",
+    "fechaHasta": "2026-07-30",
+    "estado": "Registrado",
+    "observaciones": "",
+    "diasTomados": 7,
+    "creadoEn": "2026-07-24T12:58:36.390Z"
+  },
+  {
+    "id": "e98814a7-8e5c-467d-9e67-bca5af5836fa",
+    "empleadoId": "304bea05-71e9-4ed1-8609-ab208058b4e1",
+    "periodo": 2026,
+    "fechaDesde": "2026-07-20",
+    "fechaHasta": "2026-07-26",
+    "estado": "Registrado",
+    "observaciones": "",
+    "diasTomados": 7,
+    "creadoEn": "2026-07-24T13:01:46.623Z"
+  },
+  {
+    "id": "81681ba9-e764-4360-bf16-fff2f1ee1b6d",
+    "empleadoId": "8aaff17f-a0c6-417f-b2ab-55d8726bd20d",
+    "periodo": 2026,
+    "fechaDesde": "2026-07-24",
+    "fechaHasta": "2026-07-30",
+    "estado": "Registrado",
+    "observaciones": "",
+    "diasTomados": 7,
+    "creadoEn": "2026-07-24T13:02:09.194Z"
   }
 ]

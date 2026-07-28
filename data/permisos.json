@@ -7,5 +7,320 @@
     "fechaHasta": "2026-07-08",
     "observaciones": "Se retira el día 08/07  a las 11:00",
     "creadoEn": "2026-07-01T13:36:40.582Z"
+  },
+  {
+    "id": "7b58d113-35a0-4bad-a1e5-bf96b29bb151",
+    "empleadoId": "602ade2d-06d5-4d3a-857f-7685543f776a",
+    "tipo": "Estudio médico",
+    "motivo": "medico 13hs",
+    "fechaDesde": "2026-07-23",
+    "fechaHasta": "2026-07-23",
+    "horaDesde": "13:00",
+    "horaHasta": "15:00",
+    "estado": "Aprobado",
+    "observaciones": "",
+    "creadoEn": "2026-07-20T12:17:06.601Z",
+    "adjunto": {
+      "nombreOriginal": "04.jpeg",
+      "nombreAlmacenado": "permiso-f1dccab3-d8d9-4363-a971-a74ca5c94c2c.jpeg",
+      "url": "/uploads/permisos/permiso-f1dccab3-d8d9-4363-a971-a74ca5c94c2c.jpeg",
+      "tipoMime": "image/jpeg",
+      "tamanio": 105067,
+      "fechaCarga": "2026-07-20T12:17:06.599Z"
+    }
+  },
+  {
+    "id": "68107ff2-96ca-4c3a-b493-c023c5b7a455",
+    "empleadoId": "e85e45db-9203-4e28-bd00-29e857f3258e",
+    "tipo": "Estudio médico",
+    "motivo": "Turno medico",
+    "fechaDesde": "2026-05-19",
+    "fechaHasta": "2026-05-19",
+    "horaDesde": "13:00",
+    "horaHasta": "15:00",
+    "estado": "Aprobado",
+    "observaciones": "",
+    "creadoEn": "2026-07-20T12:22:39.487Z",
+    "adjunto": {
+      "nombreOriginal": "01.jpeg",
+      "nombreAlmacenado": "permiso-bc314b17-1324-4cc5-a90c-b247cd1baa97.jpeg",
+      "url": "/uploads/permisos/permiso-bc314b17-1324-4cc5-a90c-b247cd1baa97.jpeg",
+      "tipoMime": "image/jpeg",
+      "tamanio": 119995,
+      "fechaCarga": "2026-07-20T12:22:39.485Z"
+    }
+  },
+  {
+    "id": "3777f7c7-46b3-4905-9e24-c38c662154f6",
+    "empleadoId": "81edaae2-5a7b-42a1-b4e0-949c2fb1bb05",
+    "tipo": "Estudio médico",
+    "motivo": "Turno medico",
+    "fechaDesde": "2026-05-19",
+    "fechaHasta": "2026-05-19",
+    "horaDesde": "08:30",
+    "horaHasta": "15:00",
+    "estado": "Aprobado",
+    "observaciones": "",
+    "creadoEn": "2026-07-20T12:24:53.864Z",
+    "adjunto": {
+      "nombreOriginal": "01.jpeg",
+      "nombreAlmacenado": "permiso-20664950-3e86-4283-968b-970c07b85742.jpeg",
+      "url": "/uploads/permisos/permiso-20664950-3e86-4283-968b-970c07b85742.jpeg",
+      "tipoMime": "image/jpeg",
+      "tamanio": 106381,
+      "fechaCarga": "2026-07-20T12:24:53.863Z"
+    }
+  },
+  {
+    "id": "74f26dfc-b1b5-4dcd-81e2-5e141dfffabe",
+    "empleadoId": "12df9afd-d5ab-4162-ab4e-1eedb8493b50",
+    "tipo": "Trámite",
+    "motivo": "Registro municipal.",
+    "fechaDesde": "2026-04-08",
+    "fechaHasta": "2026-04-08",
+    "horaDesde": "11:00",
+    "horaHasta": "15:00",
+    "estado": "Aprobado",
+    "observaciones": "",
+    "creadoEn": "2026-07-20T12:28:59.369Z",
+    "adjunto": {
+      "nombreOriginal": "01.jpeg",
+      "nombreAlmacenado": "permiso-8dc525d1-cc2e-465f-9c59-f5b912670d79.jpeg",
+      "url": "/uploads/permisos/permiso-8dc525d1-cc2e-465f-9c59-f5b912670d79.jpeg",
+      "tipoMime": "image/jpeg",
+      "tamanio": 140044,
+      "fechaCarga": "2026-07-20T12:28:59.368Z"
+    }
+  },
+  {
+    "id": "5718a97a-630b-4062-aaa9-05e91b22860b",
+    "empleadoId": "304bea05-71e9-4ed1-8609-ab208058b4e1",
+    "tipo": "Otro",
+    "motivo": "Pago alquiler",
+    "fechaDesde": "2026-04-07",
+    "fechaHasta": "2026-04-07",
+    "horaDesde": "",
+    "horaHasta": "",
+    "estado": "Aprobado",
+    "observaciones": "",
+    "creadoEn": "2026-07-20T12:34:18.396Z",
+    "adjunto": {
+      "nombreOriginal": "01.jpeg",
+      "nombreAlmacenado": "permiso-3dcf5946-737d-4927-8bfb-923b07e3942d.jpeg",
+      "url": "/uploads/permisos/permiso-3dcf5946-737d-4927-8bfb-923b07e3942d.jpeg",
+      "tipoMime": "image/jpeg",
+      "tamanio": 106371,
+      "fechaCarga": "2026-07-20T12:34:18.395Z"
+    }
+  },
+  {
+    "id": "fb7b8f79-d875-4c45-bcf0-207d0443fb43",
+    "empleadoId": "cbb2b549-db62-4af5-92a8-22f3c9230e7e",
+    "tipo": "Estudio médico",
+    "motivo": "Estudios medicos",
+    "fechaDesde": "2026-04-27",
+    "fechaHasta": "2026-04-27",
+    "horaDesde": "",
+    "horaHasta": "",
+    "estado": "Aprobado",
+    "observaciones": "",
+    "creadoEn": "2026-07-20T12:37:33.836Z",
+    "adjunto": {
+      "nombreOriginal": "01.jpeg",
+      "nombreAlmacenado": "permiso-385194ba-3c51-479e-9b44-4906b5019f31.jpeg",
+      "url": "/uploads/permisos/permiso-385194ba-3c51-479e-9b44-4906b5019f31.jpeg",
+      "tipoMime": "image/jpeg",
+      "tamanio": 133331,
+      "fechaCarga": "2026-07-20T12:37:33.835Z"
+    }
+  },
+  {
+    "id": "89dd58f9-f6ae-4a4f-819f-aa66399ffaf3",
+    "empleadoId": "b1fa86a2-c3a1-4fa8-b841-33addb56a068",
+    "tipo": "Otro",
+    "motivo": "Tramites personales",
+    "fechaDesde": "2026-04-23",
+    "fechaHasta": "2026-04-23",
+    "horaDesde": "",
+    "horaHasta": "",
+    "estado": "Aprobado",
+    "observaciones": "",
+    "creadoEn": "2026-07-20T12:40:05.218Z",
+    "adjunto": {
+      "nombreOriginal": "01.jpeg",
+      "nombreAlmacenado": "permiso-8e9e56b4-5ee4-4e6f-b44c-624956f477b1.jpeg",
+      "url": "/uploads/permisos/permiso-8e9e56b4-5ee4-4e6f-b44c-624956f477b1.jpeg",
+      "tipoMime": "image/jpeg",
+      "tamanio": 125069,
+      "fechaCarga": "2026-07-20T12:40:05.217Z"
+    }
+  },
+  {
+    "id": "6f512364-3ede-4c1b-80e9-7a2ceac35d6b",
+    "empleadoId": "b1fa86a2-c3a1-4fa8-b841-33addb56a068",
+    "tipo": "Otro",
+    "motivo": "Tramites personales",
+    "fechaDesde": "2026-05-19",
+    "fechaHasta": "2026-05-19",
+    "horaDesde": "",
+    "horaHasta": "",
+    "estado": "Aprobado",
+    "observaciones": "",
+    "creadoEn": "2026-07-20T12:42:37.083Z",
+    "adjunto": {
+      "nombreOriginal": "02.jpeg",
+      "nombreAlmacenado": "permiso-0b18eff0-6ea8-4793-b51e-0b134a162a30.jpeg",
+      "url": "/uploads/permisos/permiso-0b18eff0-6ea8-4793-b51e-0b134a162a30.jpeg",
+      "tipoMime": "image/jpeg",
+      "tamanio": 132664,
+      "fechaCarga": "2026-07-20T12:42:37.081Z"
+    }
+  },
+  {
+    "id": "a18c2f74-8d6a-4943-bd19-669c0f338616",
+    "empleadoId": "602ade2d-06d5-4d3a-857f-7685543f776a",
+    "tipo": "Trámite",
+    "motivo": "Registro municipal.",
+    "fechaDesde": "2026-02-09",
+    "fechaHasta": "2026-02-09",
+    "horaDesde": "",
+    "horaHasta": "",
+    "estado": "Aprobado",
+    "observaciones": "",
+    "creadoEn": "2026-07-20T12:44:39.325Z",
+    "adjunto": {
+      "nombreOriginal": "01.jpeg",
+      "nombreAlmacenado": "permiso-301c19aa-6fde-4c41-9e04-614de2f05c6e.jpeg",
+      "url": "/uploads/permisos/permiso-301c19aa-6fde-4c41-9e04-614de2f05c6e.jpeg",
+      "tipoMime": "image/jpeg",
+      "tamanio": 96348,
+      "fechaCarga": "2026-07-20T12:44:39.324Z"
+    }
+  },
+  {
+    "id": "fd362d19-490d-4b08-8a44-71727cbe57c7",
+    "empleadoId": "602ade2d-06d5-4d3a-857f-7685543f776a",
+    "tipo": "Trámite",
+    "motivo": "Anses",
+    "fechaDesde": "2026-04-22",
+    "fechaHasta": "2026-04-22",
+    "horaDesde": "",
+    "horaHasta": "",
+    "estado": "Aprobado",
+    "observaciones": "",
+    "creadoEn": "2026-07-20T12:46:00.134Z",
+    "adjunto": {
+      "nombreOriginal": "03.jpeg",
+      "nombreAlmacenado": "permiso-5cbe9f48-5484-4955-8bee-3dfa1338b898.jpeg",
+      "url": "/uploads/permisos/permiso-5cbe9f48-5484-4955-8bee-3dfa1338b898.jpeg",
+      "tipoMime": "image/jpeg",
+      "tamanio": 106237,
+      "fechaCarga": "2026-07-20T12:46:00.133Z"
+    }
+  },
+  {
+    "id": "6707bf83-ef26-4e38-8dc1-48ef796ea43b",
+    "empleadoId": "6bb30d2c-91e6-4378-b497-d0945baa6fa0",
+    "tipo": "Otro",
+    "motivo": "Tramites personales",
+    "fechaDesde": "2026-04-17",
+    "fechaHasta": "2026-04-17",
+    "horaDesde": "",
+    "horaHasta": "",
+    "estado": "Aprobado",
+    "observaciones": "",
+    "creadoEn": "2026-07-20T12:49:06.748Z",
+    "adjunto": {
+      "nombreOriginal": "01.jpeg",
+      "nombreAlmacenado": "permiso-02ced675-2d18-4fe6-a2d6-cdc060d7e2a5.jpeg",
+      "url": "/uploads/permisos/permiso-02ced675-2d18-4fe6-a2d6-cdc060d7e2a5.jpeg",
+      "tipoMime": "image/jpeg",
+      "tamanio": 149603,
+      "fechaCarga": "2026-07-20T12:49:06.747Z"
+    }
+  },
+  {
+    "id": "b7756218-308d-4467-8780-ac50270c9ab0",
+    "empleadoId": "db49bb9d-f443-4e7b-9429-032ea986a810",
+    "tipo": "Trámite",
+    "motivo": "Anses - Bco Prov",
+    "fechaDesde": "2026-05-19",
+    "fechaHasta": "2026-05-19",
+    "horaDesde": "",
+    "horaHasta": "",
+    "estado": "Aprobado",
+    "observaciones": "",
+    "creadoEn": "2026-07-20T12:53:04.825Z",
+    "adjunto": {
+      "nombreOriginal": "01.jpeg",
+      "nombreAlmacenado": "permiso-25877935-8774-4416-88b4-adb8c0f9baa1.jpeg",
+      "url": "/uploads/permisos/permiso-25877935-8774-4416-88b4-adb8c0f9baa1.jpeg",
+      "tipoMime": "image/jpeg",
+      "tamanio": 109357,
+      "fechaCarga": "2026-07-20T12:53:04.823Z"
+    }
+  },
+  {
+    "id": "381f5e75-6cf7-47c0-8c25-ad747031f13f",
+    "empleadoId": "7dedfe01-bd7c-4f80-a989-cba1a10408f5",
+    "tipo": "Trámite",
+    "motivo": "Bancario",
+    "fechaDesde": "2026-02-20",
+    "fechaHasta": "2026-02-20",
+    "horaDesde": "",
+    "horaHasta": "",
+    "estado": "Aprobado",
+    "observaciones": "",
+    "creadoEn": "2026-07-20T12:55:49.801Z",
+    "adjunto": {
+      "nombreOriginal": "01.jpeg",
+      "nombreAlmacenado": "permiso-46ff3ab0-9e93-4308-9265-f100df80e517.jpeg",
+      "url": "/uploads/permisos/permiso-46ff3ab0-9e93-4308-9265-f100df80e517.jpeg",
+      "tipoMime": "image/jpeg",
+      "tamanio": 84195,
+      "fechaCarga": "2026-07-20T12:55:49.800Z"
+    }
+  },
+  {
+    "id": "5ccd679c-138f-4deb-b1f7-babdd8b29801",
+    "empleadoId": "7dedfe01-bd7c-4f80-a989-cba1a10408f5",
+    "tipo": "Trámite",
+    "motivo": "Bancario",
+    "fechaDesde": "2026-02-25",
+    "fechaHasta": "2026-02-25",
+    "horaDesde": "",
+    "horaHasta": "",
+    "estado": "Aprobado",
+    "observaciones": "",
+    "creadoEn": "2026-07-20T12:56:36.285Z",
+    "adjunto": {
+      "nombreOriginal": "02.jpeg",
+      "nombreAlmacenado": "permiso-617f561d-67fe-430f-84a7-8fd0b7fbc9cf.jpeg",
+      "url": "/uploads/permisos/permiso-617f561d-67fe-430f-84a7-8fd0b7fbc9cf.jpeg",
+      "tipoMime": "image/jpeg",
+      "tamanio": 115474,
+      "fechaCarga": "2026-07-20T12:56:36.284Z"
+    }
+  },
+  {
+    "id": "96d92b77-cb95-4d24-b8ec-354a017409f0",
+    "empleadoId": "50d7782b-9c4f-4842-a3de-89e29b4994af",
+    "tipo": "Trámite",
+    "motivo": "TRAMITE PERSONAL",
+    "fechaDesde": "2026-07-24",
+    "fechaHasta": "2026-07-24",
+    "horaDesde": "13:30",
+    "horaHasta": "15:00",
+    "estado": "Registrado",
+    "observaciones": "SE RETIRA 13:30",
+    "creadoEn": "2026-07-23T11:49:37.109Z",
+    "adjunto": {
+      "nombreOriginal": "23-07-2026.jpeg",
+      "nombreAlmacenado": "permiso-4d218b83-2479-43ef-8a5c-1d43ad7b7c7a.jpeg",
+      "url": "/uploads/permisos/permiso-4d218b83-2479-43ef-8a5c-1d43ad7b7c7a.jpeg",
+      "tipoMime": "image/jpeg",
+      "tamanio": 119602,
+      "fechaCarga": "2026-07-23T11:49:37.108Z"
+    }
   }
 ]
