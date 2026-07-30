@@ -4,6 +4,10 @@ const $ = (selector) => document.querySelector(selector);
 const status = $("#status");
 const MONTH_NAMES = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
 
+document.querySelectorAll(".brand-mark img").forEach((logo) => {
+  logo.addEventListener("error", () => { logo.hidden = true; });
+});
+
 function setStatus(message, isError = false) {
   status.textContent = message;
   status.classList.toggle("error", isError);

@@ -1,22 +1,44 @@
 const test = require("node:test");
 const assert = require("node:assert/strict");
-const { calcularVacaciones, calcularDiasCorridos } = require("../lib/vacaciones");
+const { obtenerFechaCorte, calcularVacaciones, calcularDiasCorridos } = require("../lib/vacaciones");
 const { dateRangesOverlap } = require("../server");
 
-test("hasta 5 años de antigüedad corresponden 14 días", () => {
-  assert.deepEqual(calcularVacaciones("2022-06-15", 2026), { antiguedadAnios: 4, diasCorrespondientes: 14 });
+test("la fecha de corte es el 31 de diciembre del período seleccionado", () => {
+  assert.equal(obtenerFechaCorte(2026).toISOString(), "2026-12-31T00:00:00.000Z");
+  assert.equal(obtenerFechaCorte(2027).toISOString(), "2027-12-31T00:00:00.000Z");
 });
 
-test("más de 5 y hasta 10 años corresponden 21 días", () => {
-  assert.deepEqual(calcularVacaciones("2018-01-01", 2026), { antiguedadAnios: 8, diasCorrespondientes: 21 });
+test("respeta exactamente los límites de antigüedad al cierre del período", () => {
+  const casos = [
+    ["exactamente 5 años", "2021-12-31", 5, 14],
+    ["más de 5 años", "2021-12-30", 5, 21],
+    ["exactamente 10 años", "2016-12-31", 10, 21],
+    ["más de 10 años", "2016-12-30", 10, 28],
+    ["exactamente 20 años", "2006-12-31", 20, 28],
+    ["más de 20 años", "2006-12-30", 20, 35],
+  ];
+
+  for (const [descripcion, fechaIngreso, antiguedadAnios, diasCorrespondientes] of casos) {
+    assert.deepEqual(
+      calcularVacaciones(fechaIngreso, 2026),
+      { antiguedadAnios, diasCorrespondientes },
+      descripcion,
+    );
+  }
 });
 
-test("más de 10 y hasta 20 años corresponden 28 días", () => {
-  assert.deepEqual(calcularVacaciones("2012-12-31", 2026), { antiguedadAnios: 14, diasCorrespondientes: 28 });
-});
+test("calcula los días esperados para los cinco casos reales de 2026", () => {
+  const casos = [
+    ["Pietro", "2006-03-17", 35],
+    ["Mota", "2016-04-01", 28],
+    ["Fuenza", "2016-07-11", 28],
+    ["Natán", "2021-03-01", 21],
+    ["Cordero", "2021-11-09", 21],
+  ];
 
-test("más de 20 años corresponden 35 días", () => {
-  assert.deepEqual(calcularVacaciones("2000-01-01", 2026), { antiguedadAnios: 26, diasCorrespondientes: 35 });
+  for (const [nombre, fechaIngreso, diasEsperados] of casos) {
+    assert.equal(calcularVacaciones(fechaIngreso, 2026).diasCorrespondientes, diasEsperados, nombre);
+  }
 });
 
 test("calcula días corridos incluyendo la fecha inicial y final", () => {
