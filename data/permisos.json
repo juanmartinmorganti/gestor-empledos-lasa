@@ -322,5 +322,68 @@
       "tamanio": 119602,
       "fechaCarga": "2026-07-23T11:49:37.108Z"
     }
+  },
+  {
+    "id": "958cf7c6-a136-497d-aafe-c4ffb81fe0aa",
+    "empleadoId": "304bea05-71e9-4ed1-8609-ab208058b4e1",
+    "tipo": "Retiro",
+    "motivo": "tramites bancario",
+    "fechaDesde": "2026-08-07",
+    "fechaHasta": "2026-08-07",
+    "horaDesde": "",
+    "horaHasta": "",
+    "estado": "Registrado",
+    "observaciones": "se retira 13:00 horas",
+    "creadoEn": "2026-08-07T12:05:35.079Z",
+    "adjunto": {
+      "nombreOriginal": "02.jpeg",
+      "nombreAlmacenado": "permiso-4830f6af-0fdd-42ca-960b-c56b034a66c0.jpeg",
+      "url": "/uploads/permisos/permiso-4830f6af-0fdd-42ca-960b-c56b034a66c0.jpeg",
+      "tipoMime": "image/jpeg",
+      "tamanio": 98486,
+      "fechaCarga": "2026-08-07T12:05:35.076Z"
+    }
+  },
+  {
+    "id": "2aeafc58-40a2-4ca4-8a8c-6ae9a10c32a1",
+    "empleadoId": "8aaff17f-a0c6-417f-b2ab-55d8726bd20d",
+    "tipo": "Retiro",
+    "motivo": "tremite personal",
+    "fechaDesde": "2026-08-14",
+    "fechaHasta": "2026-08-14",
+    "horaDesde": "13:30",
+    "horaHasta": "14:00",
+    "estado": "Registrado",
+    "observaciones": "",
+    "creadoEn": "2026-08-13T11:23:58.038Z",
+    "adjunto": {
+      "nombreOriginal": "permiso.jpeg",
+      "nombreAlmacenado": "permiso-33aff723-6519-4409-a69e-146acad40b97.jpeg",
+      "url": "/uploads/permisos/permiso-33aff723-6519-4409-a69e-146acad40b97.jpeg",
+      "tipoMime": "image/jpeg",
+      "tamanio": 154622,
+      "fechaCarga": "2026-08-13T11:23:58.035Z"
+    }
+  },
+  {
+    "id": "6ae9b638-4580-4190-8e51-7f135be722a9",
+    "empleadoId": "8aaff17f-a0c6-417f-b2ab-55d8726bd20d",
+    "tipo": "Retiro",
+    "motivo": "EDELAP",
+    "fechaDesde": "2026-08-21",
+    "fechaHasta": "2026-08-21",
+    "horaDesde": "",
+    "horaHasta": "",
+    "estado": "Registrado",
+    "observaciones": "SALGO A LAS 10 HS  HASTA 11,30 HS",
+    "creadoEn": "2026-08-21T14:18:48.480Z",
+    "adjunto": {
+      "nombreOriginal": "fuenza.jpeg",
+      "nombreAlmacenado": "permiso-21288d8a-446f-4999-b913-861691f6ec5d.jpeg",
+      "url": "/uploads/permisos/permiso-21288d8a-446f-4999-b913-861691f6ec5d.jpeg",
+      "tipoMime": "image/jpeg",
+      "tamanio": 94446,
+      "fechaCarga": "2026-08-21T14:18:48.477Z"
+    }
   }
 ]
