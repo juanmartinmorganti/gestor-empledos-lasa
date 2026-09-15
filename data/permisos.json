@@ -385,5 +385,26 @@
       "tamanio": 94446,
       "fechaCarga": "2026-08-21T14:18:48.477Z"
     }
+  },
+  {
+    "id": "ec51bd4d-b5bb-419b-9f4f-d58cec3b1e5d",
+    "empleadoId": "982648fa-0893-441f-88e3-20afff6da64e",
+    "tipo": "Ausencia",
+    "motivo": "ASUNTOS FAMILIARES",
+    "fechaDesde": "2026-08-31",
+    "fechaHasta": "2026-08-31",
+    "horaDesde": "",
+    "horaHasta": "",
+    "estado": "Registrado",
+    "observaciones": "",
+    "creadoEn": "2026-08-27T13:20:57.953Z",
+    "adjunto": {
+      "nombreOriginal": "27-08.jpeg",
+      "nombreAlmacenado": "permiso-975eed71-9113-4b10-9096-befbc6ba04be.jpeg",
+      "url": "/uploads/permisos/permiso-975eed71-9113-4b10-9096-befbc6ba04be.jpeg",
+      "tipoMime": "image/jpeg",
+      "tamanio": 115256,
+      "fechaCarga": "2026-08-27T13:20:57.951Z"
+    }
   }
 ]
